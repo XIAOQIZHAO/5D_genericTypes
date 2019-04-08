@@ -71,7 +71,7 @@ your exemplifying line from the Pair example here
 in [class](URL)
 
 
-- the declaration of a method that accepts a parameter of a generic type:
+- the declaration of a method or a constructor that accepts a parameter of a generic type:
 ```
 your exemplifying line from the Pair example here
 ```

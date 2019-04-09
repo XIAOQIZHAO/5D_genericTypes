@@ -15,6 +15,10 @@ public class Pair<T>
         this.second = second; 
         }
 
+    public String toString(){
+	return "[" + first + "," + second + "]";
+    }
+    
     public T getFirst()  { return first; }
     public T getSecond() { return second; }
 }

@@ -17,8 +17,8 @@ public class FibPair {
         oneFib(  2, 1);  // recursive case, sometimes smallest
         oneFib(  7, 13); // recursive case
 
-        // System.out.println( "no noticeable delay before...");
-        // oneFib( 46, 1836311903);
+        System.out.println( "no noticeable delay before...");
+        oneFib( 46, 1836311903);
           /* value from 
              stackoverflow.com/questions/15065088/upper-limits-for-fibonnacci
              but adjusted because they index from 1. Who ARE these people?
@@ -83,14 +83,13 @@ public class FibPair {
               n >= 0
      */
     private static Integer fib( int n) {
-	Pair<Integer> current = new Pair<Integer>(0, 0);
-	if (n == 0 || n == 1) {
-	    current = new Pair<Integer>(n, 0);
-	    return current.getFirst();
-	}
-	else {
-	    current = new Pair<Integer>(fib(n-1), fib(n-2));
-	    return current.getFirst() + current.getSecond();
-	}
+	return pairWithFirstFibN(n).getFirst();
+    }
+
+    private static Pair<Integer> pairWithFirstFibN(int n) {
+	if (n == 0)
+	    return new Pair<Integer>(0, 1);
+	else
+	    return nextPairAfter(pairWithFirstFibN(n-1));
     }
 }
